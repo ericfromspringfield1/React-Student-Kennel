@@ -1,0 +1,41 @@
+{
+  "animals": [
+    {
+      "id": 4,
+      "name": "Nard",
+      "breed": "big dog"
+    }
+  ],
+  "locations": [
+    {
+      "id": 2,
+      "name": "Nashville South",
+      "employeeId": 3,
+      "ownerId": 2
+    }
+  ],
+  "employees": [
+    {
+      "id": 2,
+      "name": "Charles Chaplin",
+      "title": "Silent Therapy"
+    },
+    {
+      "id": 3,
+      "name": "Del Close",
+      "title": "Improvisational Surgery   "
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Johnny Lawrence",
+      "phoneNumber": "615-634-0187"
+    },
+    {
+      "id": 2,
+      "name": "Headwoud Harrison",
+      "phoneNumber": "615-345-3442"
+    }
+  ]
+}
