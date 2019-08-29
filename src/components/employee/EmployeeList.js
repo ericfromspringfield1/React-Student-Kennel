@@ -23,11 +23,19 @@ class EmployeeList extends Component {
     console.log("EMPLOYEE LIST: Render");
 
     return (
+        <React.Fragment>
       <div className="container-cards">
         {this.state.employees.map(employee => (
-          <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee}/>
+          <EmployeeCard key={employee.id} employee={employee} deleteEmployee={this.deleteEmployee} {...this.props}/>
         ))}
       </div>
+        <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {this.props.history.push("/employees/new")}}>Add Employee
+        </button>
+        </section>
+    </React.Fragment>
     );
   }
   

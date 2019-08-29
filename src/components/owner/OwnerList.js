@@ -24,9 +24,17 @@ render(){
     console.log("OWNER LIST: Render");
 
     return(
+        <React.Fragment>
+        <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {this.props.history.push("/owners/new")}}>Add Owner
+        </button>
+        </section>
         <div className="container-cards">
-            {this.state.owners.map(owner => <OwnerCard key={owner.id} owner={owner} deleteOwner={this.deleteOwner}/> )}
+            {this.state.owners.map(owner => <OwnerCard key={owner.id} owner={owner} deleteOwner={this.deleteOwner} {...this.props}/> )}
         </div>
+        </React.Fragment>
     )
 }
 
