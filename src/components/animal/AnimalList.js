@@ -23,27 +23,36 @@ import React, { Component } from 'react'
 
     render(){
         console.log("AnimalList: Render");
-      
+        
         return(
-          <div className="container-cards">
+            <React.Fragment>
+        <section className="section-content">
+        <button type="button"
+            className="btn"
+            onClick={() => {this.props.history.push("/animals/new")}}>Admit Animal
+        </button>
+        </section>
+        <div className="container-cards">
             {this.state.animals.map(animal =>
               <AnimalCard
-                key={animal.id}
-                animal={animal}
-                deleteAnimal={this.deleteAnimal}
+              key={animal.id}
+              animal={animal}
+              deleteAnimal={this.deleteAnimal}
+              {...this.props}
               />
-            )}
+              )}
           </div>
+          </React.Fragment>
         )
-      }
-      
-      deleteAnimal = id => {
-          AnimalManager.delete(id)
-          .then(() => {
-              AnimalManager.getAll()
-              .then((newAnimals) => {
-                  this.setState({
-                      animals: newAnimals
+        }
+        
+        deleteAnimal = id => {
+            AnimalManager.delete(id)
+            .then(() => {
+                AnimalManager.getAll()
+                .then((newAnimals) => {
+                    this.setState({
+                        animals: newAnimals
                     })
                 })
             })
